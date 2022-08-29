@@ -10,7 +10,7 @@ from image_to_image import preprocess as preprocess_init
 
 MY_TOKEN = os.environ["HF_TOKEN"]
 
-def generate_variations(prompt, num_samples, gc, steps, height=512, width=768, seed=None, init_image=None):
+def generate_variations(prompt, num_samples, output_directly, gc, steps, height=512, width=768, seed=None, init_image=None):
     # Load model
     model_id = "CompVis/stable-diffusion-v1-4"
     scheduler = LMSDiscreteScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear", num_train_timesteps=1000)
