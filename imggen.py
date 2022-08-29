@@ -30,6 +30,7 @@ def generate_variations(prompt, num_samples, gc, steps, height=512, width=768, s
         pipeargs = {
             "guidance_scale": gc,
             "num_inference_steps": steps,
+            "generator": torch.Generator("cuda").manual_seed(seed_image),
             "prompt": prompt,
         }
         if init_image:
